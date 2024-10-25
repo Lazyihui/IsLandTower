@@ -44,5 +44,10 @@ namespace TD {
         }
 
 
+        public GameObject Entity_GetTower() {
+            ctx.entities.TryGetValue("Entity_Tower", out GameObject tower);
+            return tower;
+        }
+
     }
 }

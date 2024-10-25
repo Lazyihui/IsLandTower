@@ -26,6 +26,9 @@ namespace TD {
 
                 // GameEnter;
 
+                TowerEntity tower = TowerDomain.Spawn(ctx);
+                tower.id = ctx.gameEntity.crystalID;
+
             };
 
 

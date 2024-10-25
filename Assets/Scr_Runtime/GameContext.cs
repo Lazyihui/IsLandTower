@@ -9,8 +9,11 @@ namespace TD {
 
     public class GameContext {
 
-        public TowerRepository towerRepository;
+        // Game
+        public GameEntity gameEntity;
 
+        // repos
+        public TowerRepository towerRepository;
 
 
         // Core
@@ -18,6 +21,9 @@ namespace TD {
         public AssetsCore assetsCore;
 
         public GameContext() {
+            // Game
+            gameEntity = new GameEntity();
+
             // repos
             towerRepository = new TowerRepository();
 
