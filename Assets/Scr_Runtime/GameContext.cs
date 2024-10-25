@@ -3,13 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameContext {
 
-    public TowerRepository towerRepository;
+namespace TD {
 
-    public GameContext() {
-        towerRepository = new TowerRepository();
+
+    public class GameContext {
+
+        public TowerRepository towerRepository;
+
+
+
+        // Core
+
+        public AssetsCore assetsCore;
+
+        public GameContext() {
+            // repos
+            towerRepository = new TowerRepository();
+
+            // Core
+            assetsCore = new AssetsCore();
+        }
+
+
     }
-
-
 }

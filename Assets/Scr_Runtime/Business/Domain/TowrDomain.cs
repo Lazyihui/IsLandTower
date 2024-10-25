@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public static class TowerDomain {
 
-    public static void Spawn(GameContext ctx) {
+namespace TD {
+
+    public static class TowerDomain {
+
+        public static void Spawn(GameContext ctx) {
+        }
     }
 }
