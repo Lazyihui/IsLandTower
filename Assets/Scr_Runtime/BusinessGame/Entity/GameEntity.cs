@@ -8,10 +8,11 @@ public class GameEntity {
 
     public int crystalID;
 
-
+    public float restFixTime;
     public GameEntity() {
         crystalID = 0;
+        restFixTime = 0;
     }
 
-    
+
 }
