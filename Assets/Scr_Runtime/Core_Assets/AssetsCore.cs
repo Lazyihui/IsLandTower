@@ -49,5 +49,15 @@ namespace TD {
             return tower;
         }
 
+        public GameObject Entity_GetMap() {
+            ctx.entities.TryGetValue("Entity_Map", out GameObject map);
+            return map;
+        }
+
+        public GameObject Entity_GetMapElement(){
+            ctx.entities.TryGetValue("Grid_1", out GameObject mapElement);
+            return mapElement;
+        }
+
     }
 }

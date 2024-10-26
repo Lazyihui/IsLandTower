@@ -23,6 +23,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Entity
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79d9f105cf0610e40ac2a6a664cecb73
+    m_Address: Grid_1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d956463dc279b994caa7bc533ec35887
+    m_Address: Entity_Map
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entity
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2ed1854cfcc08fb459a6d3c978859f4c, type: 2}
   m_SchemaSet:

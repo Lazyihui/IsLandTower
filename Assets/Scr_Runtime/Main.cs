@@ -29,6 +29,8 @@ namespace TD {
                 TowerEntity tower = TowerDomain.Spawn(ctx);
                 tower.id = ctx.gameEntity.crystalID;
 
+                MapDomain.Spawn(ctx);
+
             };
 
 
