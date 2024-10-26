@@ -31,6 +31,8 @@ namespace TD {
 
                 MapDomain.Spawn(ctx);
 
+                MstDomain.Spawn(ctx);
+
             };
 
 

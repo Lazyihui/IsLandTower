@@ -59,5 +59,10 @@ namespace TD {
             return mapElement;
         }
 
+
+        public GameObject Entity_GetMst() {
+            ctx.entities.TryGetValue("Entity_Mst", out GameObject mst);
+            return mst;
+        }
     }
 }
