@@ -25,6 +25,55 @@ namespace TD {
 
         }
 
+        public static void MouseSelect(GameContext ctx, CellEntity entity) {
+
+            Ray mouseRay = ctx.mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit2D hitInfo;
+
+            hitInfo = Physics2D.Raycast(mouseRay.origin, mouseRay.direction, Mathf.Infinity);
+
+            if (hitInfo == false) {
+                return;
+            }
+
+            if (hitInfo.collider.tag == "Cell") {
+
+
+                entity.state = CellState.PreSelect;
+
+                if (Input.GetMouseButtonDown(0)) {
+                    entity.state = CellState.Select;
+
+                    Debug.Log(entity.state);
+                    // SetState(entity);
+                }
+            }
+
+            // if (Physics2D.Raycast(mouseRay.origin, mouseRay.direction, Mathf.Infinity)) {
+
+            //     Debug.Log("hit");
+            // }
+
+            // if (Physics2D.Raycast(mouseRay, out hitInfo)) {
+
+            //     Debug.Log(hitInfo.collider.gameObject);
+            //     Debug.Log(hitInfo.collider.gameObject);
+
+            //     // if (hitInfo.collider.gameObject == entity.gameObject) {
+            //     //     hasMouseSelect = true;
+            //     // }
+
+            // }
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        }
+
+
+        public static void SetState(CellEntity entity) {
+            entity.SetState();
+        }
 
     }
 }

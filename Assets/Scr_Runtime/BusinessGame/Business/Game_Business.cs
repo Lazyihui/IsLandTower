@@ -18,23 +18,12 @@ namespace TD {
             MstDomain.Spawn(ctx);
 
 
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 0, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 0, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(4, 0, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(6, 0, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(8, 0, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(9, 0, 0));
-
-
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 2, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 4, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 6, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 8, 0));
-
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 2, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 4, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 5, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 6, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(-4.5f, 3, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(-2.5f, 3, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(-0.5f, 3, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(1.5f, 3, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(3.5f, 3, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(5.5f, 3, 0));
 
 
 
@@ -75,7 +64,14 @@ namespace TD {
         }
 
         static void LogicTick(GameContext ctx, float dt) {
+            int lenCell = ctx.cellRepository.TakeAll(out CellEntity[] cells);
 
+            for (int i = 0; i < lenCell; i++) {
+                CellEntity cell = cells[i];
+                CellDomain.MouseSelect(ctx, cell);
+                CellDomain.SetState(cell);
+
+            }
         }
 
         static void LastTick(GameContext ctx, float dt) {

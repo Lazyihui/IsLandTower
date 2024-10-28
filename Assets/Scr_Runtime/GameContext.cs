@@ -8,6 +8,8 @@ namespace TD {
 
 
     public class GameContext {
+        // inInject
+        public Camera mainCamera;
 
         // Game
         public GameEntity gameEntity;
@@ -39,8 +41,9 @@ namespace TD {
             assetsCore = new AssetsCore();
         }
 
-        public void Inject(Transform cellRoot) {
+        public void Inject(Transform cellRoot,Camera camera) {
             gameEntity.Inject(cellRoot);
+            mainCamera = camera;
         }
 
     }

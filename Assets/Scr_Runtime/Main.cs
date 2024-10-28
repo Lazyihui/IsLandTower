@@ -21,8 +21,9 @@ namespace TD {
         void Awake() {
 
             ctx = new GameContext();
+            Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
-            ctx.Inject(cellRoot);
+            ctx.Inject(cellRoot, camera);
 
             Action action = async () => {
                 await ctx.assetsCore.LoadAll();
@@ -44,7 +45,8 @@ namespace TD {
         }
 
         void Update() {
-
+            float dt = Time.deltaTime;
+            Game_Business.Tick(ctx, dt);
         }
 
         void OnApplicationQuit() {
