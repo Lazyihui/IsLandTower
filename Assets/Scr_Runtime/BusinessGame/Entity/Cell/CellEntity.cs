@@ -17,7 +17,7 @@ namespace TD {
         public int id;
 
         public void Ctor() {
-            state = CellState.NoSelect;
+            state = CellState.Select;
         }
 
         public void SetPos(Vector3 pos) {
@@ -27,23 +27,25 @@ namespace TD {
 
         public void SetState() {
 
-            switch (state) {
-                case CellState.NoSelect:
-                    select.SetActive(false);
-                    noSelect.SetActive(true);
-                    PreSelect.SetActive(false);
-                    break;
-                case CellState.Select:
-                    select.SetActive(true);
-                    noSelect.SetActive(false);
-                    PreSelect.SetActive(false);
-                    break;
-                case CellState.PreSelect:
-                    select.SetActive(false);
-                    noSelect.SetActive(false);
-                    PreSelect.SetActive(true);
-                    break;
+            if (state == CellState.NoSelect) {
+
+                select.SetActive(false);
+                noSelect.SetActive(true);
+                PreSelect.SetActive(false);
+
+            } else if (state == CellState.Select) {
+
+                select.SetActive(true);
+                noSelect.SetActive(false);
+                PreSelect.SetActive(false);
+
+            } else if (state == CellState.PreSelect) {
+
+                select.SetActive(false);
+                noSelect.SetActive(false);
+                PreSelect.SetActive(true);
             }
+
         }
 
 
