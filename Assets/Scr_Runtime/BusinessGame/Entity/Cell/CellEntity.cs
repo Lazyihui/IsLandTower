@@ -13,6 +13,10 @@ namespace TD {
 
         }
 
+        public void SetPos(Vector3 pos) {
+            transform.position = pos;
+        }
+
 
     }
 }

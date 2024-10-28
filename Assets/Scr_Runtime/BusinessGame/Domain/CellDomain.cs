@@ -4,33 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace TD{
+namespace TD {
 
 
-public static class CellDomain{
+    public static class CellDomain {
 
-    public static CellEntity Spawn(GameContext ctx){
+        public static CellEntity Spawn(GameContext ctx, Transform transform, Vector3 pos) {
 
-        // 1.得到地图预制体
-        GameObject prefab = ctx.assetsCore.Entity_GetCell();
-        if(prefab == null) {
-            Debug.LogError("Cell prefab not found");
-            return null;
+            GameObject cellPrefab = ctx.assetsCore.Entity_GetCell();
+            CellEntity entity = GameObject.Instantiate(cellPrefab, transform).GetComponent<CellEntity>();
+
+            entity.Ctor();
+            entity.SetPos(pos);
+
+            entity.id = ctx.gameEntity.cellIdRecord++;
+
+            ctx.cellRepository.Add(entity);
+
+            return entity;
+
         }
-        GameObject go = GameObject.Instantiate(prefab);
 
-        GameObject cellPrefab = ctx.assetsCore.Entity_GetCellElement();
-        CellEntity entity = GameObject.Instantiate(cellPrefab,go.transform).GetComponent<CellEntity>();
-
-
-        entity.Ctor();
-
-        ctx.cellRepository.Add(entity);
-
-        return entity;
 
     }
-
-
-}
 }

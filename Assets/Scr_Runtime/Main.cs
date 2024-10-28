@@ -10,6 +10,8 @@ namespace TD {
 
     public class Main : MonoBehaviour {
 
+        [SerializeField] Transform cellRoot;
+
         GameContext ctx;
 
         bool isInit = false;
@@ -19,6 +21,8 @@ namespace TD {
         void Awake() {
 
             ctx = new GameContext();
+
+            ctx.Inject(cellRoot);
 
             Action action = async () => {
                 await ctx.assetsCore.LoadAll();

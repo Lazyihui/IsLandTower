@@ -17,7 +17,26 @@ namespace TD {
 
             MstDomain.Spawn(ctx);
 
-            CellDomain.Spawn(ctx);
+
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 0, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 0, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(4, 0, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(6, 0, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(8, 0, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(9, 0, 0));
+
+
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 2, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 4, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 6, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(0, 8, 0));
+
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 2, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 4, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 5, 0));
+            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(2, 6, 0));
+
+
 
         }
 

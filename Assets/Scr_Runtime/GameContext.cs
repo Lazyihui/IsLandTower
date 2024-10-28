@@ -39,6 +39,9 @@ namespace TD {
             assetsCore = new AssetsCore();
         }
 
+        public void Inject(Transform cellRoot) {
+            gameEntity.Inject(cellRoot);
+        }
 
     }
 }
