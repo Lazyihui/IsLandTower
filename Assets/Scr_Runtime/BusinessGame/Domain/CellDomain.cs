@@ -33,23 +33,26 @@ namespace TD {
 
             hitInfo = Physics2D.Raycast(mouseRay.origin, mouseRay.direction, Mathf.Infinity);
 
-            if (hitInfo == false) {
-                return;
-            }
-
-            if (hitInfo.collider.tag == "Cell") {
+            if (Physics2D.Raycast(mouseRay.origin, mouseRay.direction, Mathf.Infinity)) {
 
 
-                entity.state = CellState.PreSelect;
+                if (hitInfo.collider.tag == "Cell") {
 
-                if (Input.GetMouseButtonDown(0)) {
-                    entity.state = CellState.Select;
 
-                    Debug.Log(entity.state);
-                    // SetState(entity);
+                    entity.state = CellState.PreSelect;
+
+                    if (Input.GetMouseButtonDown(0)) {
+                        entity.state = CellState.Select;
+
+                        Debug.Log(entity.state);
+                        // SetState(entity);
+                    }
                 }
-            }
 
+            } else {
+                Debug.Log("NoSelect");
+                entity.state = CellState.NoSelect;
+            }
             // if (Physics2D.Raycast(mouseRay.origin, mouseRay.direction, Mathf.Infinity)) {
 
             //     Debug.Log("hit");
