@@ -70,11 +70,6 @@ namespace TD {
                 CellEntity cell = cells[i];
                 CellDomain.MouseSelect(ctx, cell);
                 CellDomain.SetState(cell);
-
-                if(Input.GetKeyDown(KeyCode.Space)){
-                    cell.state = CellState.Select;
-                    Debug.Log(cell.state);
-                }
             }
         }
 

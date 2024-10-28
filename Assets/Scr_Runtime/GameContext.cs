@@ -27,6 +27,8 @@ namespace TD {
 
         public AssetsCore assetsCore;
 
+        public TemplateCore templateCore;
+
         public GameContext() {
             // Game
             gameEntity = new GameEntity();
@@ -39,6 +41,7 @@ namespace TD {
 
             // Core
             assetsCore = new AssetsCore();
+            templateCore = new TemplateCore();
         }
 
         public void Inject(Transform cellRoot,Camera camera) {

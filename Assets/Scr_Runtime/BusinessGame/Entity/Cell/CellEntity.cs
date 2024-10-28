@@ -16,8 +16,11 @@ namespace TD {
 
         public int id;
 
+        public bool hasTower;
+
         public void Ctor() {
             state = CellState.Select;
+            hasTower = false;
         }
 
         public void SetPos(Vector3 pos) {

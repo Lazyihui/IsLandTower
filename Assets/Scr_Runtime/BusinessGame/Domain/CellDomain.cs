@@ -38,24 +38,24 @@ namespace TD {
                 if (hitInfo.collider.tag == "Cell") {
 
                     CellEntity cell = hitInfo.collider.GetComponent<CellEntity>();
-                    if(cell.state == CellState.Select) return;
+                    if (cell.state == CellState.Select) return;
 
                     cell.state = CellState.PreSelect;
 
                     int len = ctx.cellRepository.TakeAll(out CellEntity[] cells);
-                    
+
                     for (int i = 0; i < len; i++) {
-                        if (cells[i].id != cell.id) {
-                            cells[i].state = CellState.NoSelect;
+                        CellEntity exceptCell = cells[i];
+                        if (exceptCell.id != cell.id&&exceptCell.hasTower==false) {
+                            exceptCell.state = CellState.NoSelect;
                         }
                     }
 
+
                     if (Input.GetMouseButtonDown(0)) {
-
                         cell.state = CellState.Select;
+                        cell.hasTower = true;
                         Debug.Log(cell.state);
-                        Debug.Log("Select Cell");
-
                     }
 
 
@@ -64,6 +64,9 @@ namespace TD {
                 }
 
             } else {
+                if (entity.hasTower) {
+                    return;
+                }
                 entity.state = CellState.NoSelect;
             }
 

@@ -27,6 +27,8 @@ namespace TD {
 
             Action action = async () => {
                 await ctx.assetsCore.LoadAll();
+                await ctx.templateCore.LoadAll();
+                
                 isInit = true;
 
                 // GameEnter;
@@ -65,6 +67,7 @@ namespace TD {
             isTearDown = true;
 
             ctx.assetsCore.UnLoadAll();
+            ctx.templateCore.UnLoadAll();
         }
 
 

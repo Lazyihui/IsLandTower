@@ -10,16 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: tower
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: tower
   m_Data:
     m_SerializedData: []
-  m_GUID: 4f6e657290deb6e419416df93cc46ee1
-  m_SerializeEntries: []
+  m_GUID: 007146e8ef3f77b49b8a4f8c23718cce
+  m_SerializeEntries:
+  - m_GUID: aec9ec0201184d149a1fc90bd449b2f0
+    m_Address: TM_Tower
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Tower
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2ed1854cfcc08fb459a6d3c978859f4c, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: a92bc52cffe39754d8458a8fa7b21e66, type: 2}
-    - {fileID: 11400000, guid: 727f632f9b9c85f4484fe8c80b6d138b, type: 2}
+    - {fileID: 11400000, guid: 4a34eaf194a47234b97789b6c3ee3ac6, type: 2}
+    - {fileID: 11400000, guid: 7a5373d31d2450d408389e2fcb0dfecf, type: 2}

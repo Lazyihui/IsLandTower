@@ -46,6 +46,9 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: 2cf0a348f8a23ca4fba814c3cb045343, type: 2}
   - {fileID: 11400000, guid: 4f9a19b54fc70c041b65bb03010d7b71, type: 2}
+  - {fileID: 11400000, guid: c8aedf1161091b148ab2b8c12d820bee, type: 2}
+  - {fileID: 11400000, guid: e2c73e31c8e16cc44b9155cb97e41f6c, type: 2}
+  - {fileID: 11400000, guid: 6d4c1c4006affb7489cea9b0cc4ef5b4, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -88,6 +91,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Entity
+    - Tower
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 559f938befe9aeb429e470b73ca8170d, type: 2}
