@@ -25,7 +25,7 @@ namespace TD {
 
             // 2.得到底下的组件
             GameObject girdPrefab = ctx.assetsCore.Entity_GetMapElement();
-            MapGridElement gird = GameObject.Instantiate(girdPrefab).GetComponent<MapGridElement>();
+            MapGridElement gird = GameObject.Instantiate(girdPrefab,entity.transform).GetComponent<MapGridElement>();
 
             entity.Inject(gird);
 

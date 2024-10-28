@@ -64,5 +64,15 @@ namespace TD {
             ctx.entities.TryGetValue("Entity_Mst", out GameObject mst);
             return mst;
         }
+
+        public GameObject Entity_GetCell() {
+            ctx.entities.TryGetValue("Entity_Cell", out GameObject cell);
+            return cell;
+        }
+
+        public GameObject Entity_GetCellElement() {
+            ctx.entities.TryGetValue("CellElement", out GameObject enemy);
+            return enemy;
+        }
     }
 }

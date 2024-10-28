@@ -17,6 +17,8 @@ namespace TD {
 
             MstDomain.Spawn(ctx);
 
+            CellDomain.Spawn(ctx);
+
         }
 
 
