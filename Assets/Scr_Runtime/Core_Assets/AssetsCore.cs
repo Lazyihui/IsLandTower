@@ -32,7 +32,20 @@ namespace TD {
                 }
 
                 ctx.entitiesHandle = handle;
+            }
 
+            {
+                AssetLabelReference labelReference = new AssetLabelReference();
+                labelReference.labelString = "Panel";
+                var handle = Addressables.LoadAssetsAsync<GameObject>(labelReference, null);
+
+                var all = await handle.Task;
+
+                foreach (var item in all) {
+                    ctx.panels.Add(item.name, item);
+                }
+
+                ctx.panelsHandle = handle;
             }
         }
 
@@ -40,6 +53,9 @@ namespace TD {
         public void UnLoadAll() {
             if (ctx.entitiesHandle.IsValid()) {
                 Addressables.Release(ctx.entitiesHandle);
+            }
+            if (ctx.panelsHandle.IsValid()) {
+                Addressables.Release(ctx.panelsHandle);
             }
         }
 
@@ -54,7 +70,7 @@ namespace TD {
             return map;
         }
 
-        public GameObject Entity_GetMapElement(){
+        public GameObject Entity_GetMapElement() {
             ctx.entities.TryGetValue("Grid_1", out GameObject mapElement);
             return mapElement;
         }
@@ -73,6 +89,11 @@ namespace TD {
         public GameObject Entity_GetCellElement() {
             ctx.entities.TryGetValue("CellElement", out GameObject enemy);
             return enemy;
+        }
+
+        public GameObject Panel_GetTower() {
+            ctx.panels.TryGetValue("Panel_Tower", out GameObject tower);
+            return tower;
         }
     }
 }

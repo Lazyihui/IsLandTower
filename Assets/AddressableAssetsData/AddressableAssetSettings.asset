@@ -92,6 +92,7 @@ MonoBehaviour:
     - default
     - Entity
     - Tower
+    - Panel
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 559f938befe9aeb429e470b73ca8170d, type: 2}

@@ -10,6 +10,7 @@ namespace TD {
     public class GameContext {
         // inInject
         public Camera mainCamera;
+        public Canvas screenCanvas;
 
         // Game
         public GameEntity gameEntity;
@@ -29,6 +30,8 @@ namespace TD {
 
         public TemplateCore templateCore;
 
+        public AppUI appUI;
+
         public GameContext() {
             // Game
             gameEntity = new GameEntity();
@@ -42,11 +45,13 @@ namespace TD {
             // Core
             assetsCore = new AssetsCore();
             templateCore = new TemplateCore();
+            appUI = new AppUI();
         }
 
-        public void Inject(Transform cellRoot,Camera camera) {
+        public void Inject(Transform cellRoot,Camera camera,Canvas screenCanvas) {
             gameEntity.Inject(cellRoot);
             mainCamera = camera;
+            this.screenCanvas = screenCanvas;
         }
 
     }

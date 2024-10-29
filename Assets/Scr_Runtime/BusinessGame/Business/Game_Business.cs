@@ -25,6 +25,8 @@ namespace TD {
             CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(3.5f, 3, 0));
             CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(5.5f, 3, 0));
 
+            ctx.appUI.Panel_Tower_Open(ctx);
+
 
 
         }

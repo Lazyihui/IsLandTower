@@ -14,8 +14,13 @@ namespace TD.AssetsInternal {
 
         public AsyncOperationHandle entitiesHandle;
 
+        public Dictionary<string, GameObject> panels;
+
+        public AsyncOperationHandle panelsHandle;
+
         public AssetsContext() {
             entities = new Dictionary<string, GameObject>();
+            panels = new Dictionary<string, GameObject>();
         }
 
 

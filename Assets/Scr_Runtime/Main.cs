@@ -11,6 +11,7 @@ namespace TD {
     public class Main : MonoBehaviour {
 
         [SerializeField] Transform cellRoot;
+        [SerializeField] Canvas screenCanvas;
 
         GameContext ctx;
 
@@ -23,12 +24,12 @@ namespace TD {
             ctx = new GameContext();
             Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
-            ctx.Inject(cellRoot, camera);
+            ctx.Inject(cellRoot, camera,screenCanvas);
 
             Action action = async () => {
                 await ctx.assetsCore.LoadAll();
                 await ctx.templateCore.LoadAll();
-                
+
                 isInit = true;
 
                 // GameEnter;
