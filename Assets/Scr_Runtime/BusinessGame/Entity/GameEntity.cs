@@ -14,6 +14,8 @@ public class GameEntity {
 
     public int towerIDRecord;
 
+    public int bulletIDRecord;
+
     public float restFixTime;
 
 
@@ -21,6 +23,7 @@ public class GameEntity {
         crystalID = 0;
         towerIDRecord = 0;
         restFixTime = 0;
+        bulletIDRecord = 0;
     }
 
     public void Inject(Transform cellRoot) {

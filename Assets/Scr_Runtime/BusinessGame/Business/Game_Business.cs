@@ -17,6 +17,7 @@ namespace TD {
 
             MstDomain.Spawn(ctx);
 
+            BulletDomain.Spawn(ctx, 0);
 
             CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(-4.5f, 3, 0));
             CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(-2.5f, 3, 0));
@@ -24,7 +25,6 @@ namespace TD {
             CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(1.5f, 3, 0));
             CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(3.5f, 3, 0));
             CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(5.5f, 3, 0));
-
 
 
 

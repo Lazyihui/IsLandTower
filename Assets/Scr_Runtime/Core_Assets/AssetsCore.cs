@@ -95,5 +95,10 @@ namespace TD {
             ctx.panels.TryGetValue("Panel_Tower", out GameObject tower);
             return tower;
         }
+
+        public GameObject Entity_GetBullet() {
+            ctx.entities.TryGetValue("Entity_Bullet", out GameObject bullet);
+            return bullet;
+        }
     }
 }

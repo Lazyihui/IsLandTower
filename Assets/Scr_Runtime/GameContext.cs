@@ -23,6 +23,8 @@ namespace TD {
         public MstRepository mstRepository;
         public CellRepository cellRepository;
 
+        public BulletRepository bulletRepository;
+
 
         // Core
 
@@ -41,6 +43,7 @@ namespace TD {
             mapRepository = new MapRepository();
             mstRepository = new MstRepository();
             cellRepository = new CellRepository();
+            bulletRepository = new BulletRepository();
 
             // Core
             assetsCore = new AssetsCore();
