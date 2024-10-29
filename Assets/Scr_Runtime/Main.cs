@@ -47,18 +47,19 @@ namespace TD {
 
             var uiEvent = ctx.appUI.uIEvent;
 
-            uiEvent.OnClickToewr1Handler += (int towerType) => {
+            uiEvent.OnClickToewr1Handler += (int towerType, Vector3 pos) => {
 
-                TowerDomain.Spawn(ctx,towerType);
+                Vector3 tem = ctx.mainCamera.ScreenToWorldPoint(pos);
+                TowerDomain.Spawn(ctx, towerType, tem);
                 ctx.appUI.Panel_Tower_Close(ctx);
             };
 
-            uiEvent.OnClickToewr2handler += (int towerType) => {
+            uiEvent.OnClickToewr2handler += (int towerType, Vector3 pos) => {
                 Debug.Log("OnClickToewr2handler");
                 ctx.appUI.Panel_Tower_Close(ctx);
             };
 
-            uiEvent.OnClickToewr3handler += (int towerType) => {
+            uiEvent.OnClickToewr3handler += (int towerType, Vector3 pos) => {
                 Debug.Log("OnClickToewr3handler");
                 ctx.appUI.Panel_Tower_Close(ctx);
             };

@@ -9,7 +9,7 @@ namespace TD {
 
     public static class TowerDomain {
 
-        public static TowerEntity Spawn(GameContext ctx,int typeID) {
+        public static TowerEntity Spawn(GameContext ctx,int typeID,Vector3 pos) {
 
             TowerTM tm = ctx.templateCore.Get_TMTower(typeID);
 
@@ -24,6 +24,7 @@ namespace TD {
             TowerEntity entity = go.GetComponent<TowerEntity>();
 
             entity.Ctor();
+            entity.SetPos(pos);
 
             entity.id = ctx.gameEntity.towerIDRecord++;
             entity.typeID = tm.typeID;

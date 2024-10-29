@@ -16,6 +16,11 @@ namespace TD {
         public void Ctor() {
 
         }
+
+        public void SetPos(Vector3 pos){
+            this.transform.position = pos;
+
+        }
         public void SetSprite(Sprite sprite) {
             sp.sprite = sprite;
         }

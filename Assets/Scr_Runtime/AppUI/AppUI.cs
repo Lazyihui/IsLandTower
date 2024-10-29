@@ -34,16 +34,16 @@ namespace TD {
                 panel.Ctor();
                 panel.SetPos(pos);
 
-                panel.OnTower1Click += (int towerType) => {
-                    uIEvent.OnClickToewr1Handle(towerType);
+                panel.OnTower1Click += (int towerType, Vector3 pos) => {
+                    uIEvent.OnClickToewr1Handle(towerType, pos);
                 };
 
-                panel.OnTower2Click += (int towerType) => {
-                    uIEvent.OnClickToewr2Handle(towerType);
+                panel.OnTower2Click += (int towerType, Vector3 pos) => {
+                    uIEvent.OnClickToewr2Handle(towerType, pos);
                 };
 
-                panel.OnTower3Click += (int towerType) => {
-                    uIEvent.OnClickToewr3Handle(towerType);
+                panel.OnTower3Click += (int towerType, Vector3 pos) => {
+                    uIEvent.OnClickToewr3Handle(towerType, pos);
                 };
                 ctx.appUI.ctx.panel_Tower = panel;
             }
