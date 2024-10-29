@@ -48,15 +48,19 @@ namespace TD {
             var uiEvent = ctx.appUI.uIEvent;
 
             uiEvent.OnClickToewr1Handler += (int towerType) => {
-                Debug.Log("OnClickToewr1handler");
+
+                TowerDomain.Spawn(ctx,towerType);
+                ctx.appUI.Panel_Tower_Close(ctx);
             };
 
             uiEvent.OnClickToewr2handler += (int towerType) => {
                 Debug.Log("OnClickToewr2handler");
+                ctx.appUI.Panel_Tower_Close(ctx);
             };
 
             uiEvent.OnClickToewr3handler += (int towerType) => {
                 Debug.Log("OnClickToewr3handler");
+                ctx.appUI.Panel_Tower_Close(ctx);
             };
         }
 

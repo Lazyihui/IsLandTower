@@ -9,7 +9,9 @@ namespace TD {
 
     public static class TowerDomain {
 
-        public static TowerEntity Spawn(GameContext ctx) {
+        public static TowerEntity Spawn(GameContext ctx,int typeID) {
+
+            TowerTM tm = ctx.templateCore.Get_TMTower(typeID);
 
             GameObject prefab = ctx.assetsCore.Entity_GetTower();
 
@@ -22,10 +24,15 @@ namespace TD {
             TowerEntity entity = go.GetComponent<TowerEntity>();
 
             entity.Ctor();
+
+            entity.id = ctx.gameEntity.towerIDRecord++;
+            entity.typeID = tm.typeID;
+            entity.SetSprite(tm.sprite);
             
             ctx.towerRepository.Add(entity);
 
             return entity;
         }
+        
     }
 }

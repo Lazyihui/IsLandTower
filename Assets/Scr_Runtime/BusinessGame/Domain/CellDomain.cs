@@ -17,7 +17,7 @@ namespace TD {
             entity.Ctor();
             entity.SetPos(pos);
 
-            entity.id = ctx.gameEntity.cellIdRecord++;
+            entity.id = ctx.gameEntity.cellIDRecord++;
 
             ctx.cellRepository.Add(entity);
 
@@ -60,7 +60,7 @@ namespace TD {
                             Vector3 pos = ctx.mainCamera.WorldToScreenPoint(cell.transform.position);
 
                             ctx.appUI.Panel_Tower_Open(ctx, pos);
-                            
+
                         }else{
                             ctx.appUI.Panel_Tower_Close(ctx);
                         }

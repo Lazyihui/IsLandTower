@@ -10,13 +10,16 @@ public class GameEntity {
 
     public int crystalID;
 
-    public int cellIdRecord;
+    public int cellIDRecord;
+
+    public int towerIDRecord;
 
     public float restFixTime;
 
 
     public GameEntity() {
         crystalID = 0;
+        towerIDRecord = 0;
         restFixTime = 0;
     }
 

@@ -162,3 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  typeID: 0
+  sp: {fileID: 6034732116130480265}

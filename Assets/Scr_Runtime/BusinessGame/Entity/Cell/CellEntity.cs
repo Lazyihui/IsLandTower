@@ -12,7 +12,6 @@ namespace TD {
         [SerializeField] GameObject noSelect;
         [SerializeField] GameObject PreSelect;
 
-        [SerializeField] GameObject towerSprite;
 
         public CellState state;
 
@@ -51,13 +50,7 @@ namespace TD {
                 select.SetActive(false);
                 noSelect.SetActive(false);
                 PreSelect.SetActive(true);
-            } else if (state == CellState.Tower) {
-                noSelect.SetActive(false);
-                select.SetActive(false);
-                PreSelect.SetActive(false);
-                
-                towerSprite.SetActive(true);
-            }
+            } 
 
         }
 

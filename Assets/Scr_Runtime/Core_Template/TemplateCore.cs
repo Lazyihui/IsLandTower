@@ -15,7 +15,7 @@ namespace TD {
         }
 
         public async Task LoadAll() {
-           
+
             {
                 AssetLabelReference labelReference = new AssetLabelReference();
                 labelReference.labelString = "Tower";
@@ -33,6 +33,11 @@ namespace TD {
             if (ctx.towerPtr.IsValid()) {
                 Addressables.Release(ctx.towerPtr);
             }
+        }
+
+        public TowerTM Get_TMTower(int typeID) {
+            ctx.towers.TryGetValue(typeID, out TowerTM tm);
+            return tm;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace TD {
 
         public static void Enter(GameContext ctx) {
 
-            TowerEntity tower = TowerDomain.Spawn(ctx);
+            TowerEntity tower = TowerDomain.Spawn(ctx,0);
             tower.id = ctx.gameEntity.crystalID;
 
             MapDomain.Spawn(ctx);

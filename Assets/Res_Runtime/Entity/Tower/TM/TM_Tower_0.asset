@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c281964e1f7e45d459603c988a09e326, type: 3}
-  m_Name: TM_Tower
+  m_Name: TM_Tower_0
   m_EditorClassIdentifier: 
-  towerName: 
+  towerName: "\u6C34\u6676"
   typeID: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: -38538062, guid: 1c41c19c6256bb649be589b547176e2e, type: 3}
