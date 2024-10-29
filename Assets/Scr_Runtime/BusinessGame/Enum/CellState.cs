@@ -7,4 +7,6 @@ public enum CellState {
     PreSelect,
     // 没有选择
     NoSelect,
+
+    Tower,
 }

@@ -24,7 +24,7 @@ namespace TD {
             ctx = new GameContext();
             Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
-            ctx.Inject(cellRoot, camera,screenCanvas);
+            ctx.Inject(cellRoot, camera, screenCanvas);
 
             Action action = async () => {
                 await ctx.assetsCore.LoadAll();
@@ -45,6 +45,19 @@ namespace TD {
 
         void Binding() {
 
+            var uiEvent = ctx.appUI.uIEvent;
+
+            uiEvent.OnClickToewr1Handler += (int towerType) => {
+                Debug.Log("OnClickToewr1handler");
+            };
+
+            uiEvent.OnClickToewr2handler += (int towerType) => {
+                Debug.Log("OnClickToewr2handler");
+            };
+
+            uiEvent.OnClickToewr3handler += (int towerType) => {
+                Debug.Log("OnClickToewr3handler");
+            };
         }
 
         void Update() {

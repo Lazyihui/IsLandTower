@@ -12,16 +12,20 @@ namespace TD {
         [SerializeField] GameObject noSelect;
         [SerializeField] GameObject PreSelect;
 
+        [SerializeField] GameObject towerSprite;
+
         public CellState state;
 
         public int id;
 
         public bool hasTower;
 
+
         public void Ctor() {
             state = CellState.Select;
             hasTower = false;
         }
+
 
         public void SetPos(Vector3 pos) {
             transform.position = pos;
@@ -47,6 +51,12 @@ namespace TD {
                 select.SetActive(false);
                 noSelect.SetActive(false);
                 PreSelect.SetActive(true);
+            } else if (state == CellState.Tower) {
+                noSelect.SetActive(false);
+                select.SetActive(false);
+                PreSelect.SetActive(false);
+                
+                towerSprite.SetActive(true);
             }
 
         }

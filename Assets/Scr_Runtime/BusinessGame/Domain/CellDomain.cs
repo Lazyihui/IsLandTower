@@ -46,7 +46,7 @@ namespace TD {
 
                     for (int i = 0; i < len; i++) {
                         CellEntity exceptCell = cells[i];
-                        if (exceptCell.id != cell.id&&exceptCell.hasTower==false) {
+                        if (exceptCell.id != cell.id && exceptCell.hasTower == false) {
                             exceptCell.state = CellState.NoSelect;
                         }
                     }
@@ -55,7 +55,15 @@ namespace TD {
                     if (Input.GetMouseButtonDown(0)) {
                         cell.state = CellState.Select;
                         cell.hasTower = true;
-                        Debug.Log(cell.state);
+                        if (ctx.appUI.ctx.panel_Tower == null) {
+
+                            Vector3 pos = ctx.mainCamera.WorldToScreenPoint(cell.transform.position);
+
+                            ctx.appUI.Panel_Tower_Open(ctx, pos);
+                            
+                        }else{
+                            ctx.appUI.Panel_Tower_Close(ctx);
+                        }
                     }
 
 
