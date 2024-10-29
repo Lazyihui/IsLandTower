@@ -55,12 +55,14 @@ namespace TD {
             };
 
             uiEvent.OnClickToewr2handler += (int towerType, Vector3 pos) => {
-                Debug.Log("OnClickToewr2handler");
+
+                TowerDomain.Spawn(ctx, towerType, pos);
                 ctx.appUI.Panel_Tower_Close(ctx);
             };
 
             uiEvent.OnClickToewr3handler += (int towerType, Vector3 pos) => {
-                Debug.Log("OnClickToewr3handler");
+
+                TowerDomain.Spawn(ctx, towerType, pos);
                 ctx.appUI.Panel_Tower_Close(ctx);
             };
         }

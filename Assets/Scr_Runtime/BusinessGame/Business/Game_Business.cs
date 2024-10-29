@@ -10,7 +10,7 @@ namespace TD {
 
         public static void Enter(GameContext ctx) {
 
-            TowerEntity tower = TowerDomain.Spawn(ctx,0,Vector3.zero);
+            TowerEntity tower = TowerDomain.Spawn(ctx, 0, Vector3.zero);
             tower.id = ctx.gameEntity.crystalID;
 
             MapDomain.Spawn(ctx);
@@ -18,12 +18,12 @@ namespace TD {
             MstDomain.Spawn(ctx);
 
 
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(-4.5f, 3, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(-2.5f, 3, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(-0.5f, 3, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(1.5f, 3, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(3.5f, 3, 0));
-            CellDomain.Spawn(ctx,ctx.gameEntity.cellRoot, new Vector3(5.5f, 3, 0));
+            CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(-4.5f, 3, 0));
+            CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(-2.5f, 3, 0));
+            CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(-0.5f, 3, 0));
+            CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(1.5f, 3, 0));
+            CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(3.5f, 3, 0));
+            CellDomain.Spawn(ctx, ctx.gameEntity.cellRoot, new Vector3(5.5f, 3, 0));
 
 
 
@@ -71,6 +71,19 @@ namespace TD {
                 CellEntity cell = cells[i];
                 CellDomain.MouseSelect(ctx, cell);
                 CellDomain.SetState(cell);
+            }
+
+            int lenTower = ctx.towerRepository.TakeAll(out TowerEntity[] towers);
+
+            for (int i = 0; i < lenTower; i++) {
+                TowerEntity tower = towers[i];
+                if (tower.typeID == TowerTypeConst.crystal) {
+
+                } else {
+                    TowerDomain.Attack(ctx, tower, dt);
+                }
+
+
             }
         }
 

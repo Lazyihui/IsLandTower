@@ -14,7 +14,8 @@ public class MstEntity : MonoBehaviour {
 
 
     public void Ctor() {
-
+        hp = 3;
+        maxHp = 3;
     }
 
     public void TearDown() {

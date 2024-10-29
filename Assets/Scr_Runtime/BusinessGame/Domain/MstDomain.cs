@@ -27,5 +27,10 @@ namespace TD {
 
             return entity;
         }
+
+        public static void UnSpawn(GameContext ctx, MstEntity entity) {
+            entity.TearDown();
+            ctx.mstRepository.Remove(entity);
+        }
     }
 }
